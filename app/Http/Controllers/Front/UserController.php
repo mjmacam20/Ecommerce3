@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Cart;
 use Validator;
@@ -70,7 +71,45 @@ class UserController extends Controller
     }
 
     public function forgotPassword(Request $request){
-        return view('front.users.forgot_password');
+        if($request->ajax()){
+            $data = $request->all();
+            /*echo "<pre>"; print_r($data); die;*/
+
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|email|max:150|exists:users',
+                
+            ],
+            [
+                'email.exists' => 'Email does not exists!'
+            ]
+            );
+          
+            if($validator->passes()){
+                // Generate New pass
+                $new_password = Str::random(16); 
+                // Update new password
+                User::where('email', $data['email'])->update(['password'=>bcrypt($new_password)]);
+                // Get User Details
+                $userDetails = User::where('email',$data['email'])->first()->toArray();
+                // Send Email to user
+                $email = $data['email'];
+                $messageData = ['name'=>$userDetails['name'],'email'=>$email, 'password'=>$new_password];
+                Mail::send('emails.user_forgot_password',$messageData,function($message)use($email){
+                    $message->to($email)->subject('New Password - Wavepad Managemnt');
+
+                });
+
+                //Show Success Message
+                return response()->json(['type'=>'success','message'=>'New Password sent to your registered email.']);
+
+            }else{
+                return response()->json(['type'=>'error','errors'=>$validator->messages()]);
+            }
+
+       
+        }else{
+            return view('front.users.forgot_password');
+        }
     }
 
     public function userLogin(Request $request){
