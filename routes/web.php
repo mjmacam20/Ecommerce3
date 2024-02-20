@@ -116,11 +116,11 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
     Route::get('/','IndexController@index');
     //Listing or Categories Route
     //ito ung error sa heroku
-    //$catUrls = Category::select('url')->where('status',1)->get()->pluck('url')->toArray();
+    $catUrls = Category::select('url')->where('status',1)->get()->pluck('url')->toArray();
     //dd($catUrls); die;
-    //foreach ($catUrls as $key => $url){
-    //    Route::get('/'.$url, 'ProductsController@listing');
-    //}
+    foreach ($catUrls as $key => $url){
+        Route::get('/'.$url, 'ProductsController@listing');
+    }
     //Vendor Page
     Route::get('/products/{vendorid}','ProductsController@vendorListing');
     // Product Detail Page
