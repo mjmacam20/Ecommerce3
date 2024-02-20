@@ -55,7 +55,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active show fade" id="men-latest-products">
                         <div class="row">
-                            <div class="row" data-item="4">
+                            <div class="row" data-item="5">
                                 @foreach($newProducts as $product)
                                 <?php //echo "<pre>"; print_r($product); die;?>
                                 <?php $product_image_path = 'front/images/product_images/small/'.$product['product_image']; ?>

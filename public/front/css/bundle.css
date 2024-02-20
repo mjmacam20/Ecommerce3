@@ -175,7 +175,7 @@ body {
  * Includes support for styling links too.
  */
 .u-c-brand {
-  color: #d90429 !important; }
+  color: #1A988B !important; }
 
 /*--------------------------------------------------------------
 5.0 Vendor Extensions
@@ -819,11 +819,11 @@ body {
     outline: 0; }
 
 .button-primary {
-  background: #d90429;
+  background: #1A988B;
   font-weight: 700;
   color: #ffffff; }
   .button-primary:hover {
-    background: #cf0427; }
+    background: #016072; }
 
 .button-outline-secondary {
   background-color: transparent;
@@ -1146,10 +1146,17 @@ body {
 /* Product component */
 .item {
   background-color: #ffffff;
-  border: 1px solid #DCDCDD;
+  border: 2px solid #1A988B;
   position: relative;
   margin: 0 10px 30px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 20px; /* Add border-radius for nice cornering */
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+.item:hover {
+  transform: scale(1.05); /* Zoom in by 10% on hover */
+}
 
 .image-container {
   position: relative; }
@@ -1709,7 +1716,7 @@ body {
   overflow: hidden; }
   .form-searchbox .text-field {
     padding: 0 0 0 15px;
-    border-color: #d90429; }
+    border-color: #1A988B; }
   .form-searchbox .select-hide {
     visibility: hidden; }
   .form-searchbox .select-box-position {

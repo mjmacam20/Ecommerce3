@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Cart;
 use Validator;
+use Hash;
 use Session;
 use Auth;
 
@@ -88,6 +89,42 @@ class UserController extends Controller
                 // Rediret back
                 //$redirectTo = url('/cart');
                 return response()->json(['type'=>'success','message'=>'Your contact details successfully updated!']);
+            }else{
+                return response()->json(['type'=>'error','errors'=>$validator->messages()]);
+            }
+        }else{
+            return view('front.users.user_account');
+        }
+    }
+
+    public function userUpdatePassword(Request $request){
+        if($request->ajax()){
+            $data = $request->all();    
+            /*echo "<pre>"; print_r($data); die;*/
+                $validator = Validator::make($request->all(), [
+                    'current_password' => 'required',
+                    'new_password' => 'required|min:6',
+                    'confirm_password'=>'required|min:6|same:new_password'
+                ],
+            );
+            if($validator->passes()){
+                $current_password = $data['current_password'];
+                $checkPassword = User::where('id',Auth::user()->id)->first();
+                if(Hash::check($current_password,$checkPassword->password)){
+
+                    // Update user Current Password
+                    $user = User::find(Auth::user()->id);
+                    $user->password = bcrypt($data['new_password']);
+                    $user->save();
+
+                    //$redirectTo = url('cart');
+                    return response()->json(['type' => 'success', 'message' => 'Your account password has been successfully updated!',]);
+                    
+
+                }else{
+                    return response()->json(['type'=>'incorrect','message'=>'Your current password is incorrect!']);
+                }
+      
             }else{
                 return response()->json(['type'=>'error','errors'=>$validator->messages()]);
             }

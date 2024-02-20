@@ -143,9 +143,12 @@
                         </div>
                         @endif
                     </div>
-                        @if(isset($productDetails['vendor']))
+                    @if(isset($productDetails['vendor']))
+                        @if(isset($productDetails['vendor']['id']) && isset($productDetails['vendor']['vendorbusinessdetails']['shop_name']))
                             <div style="font-size: 15px;">Sold by: <a href="/products/{{ $productDetails['vendor']['id'] }}">{{ $productDetails['vendor']['vendorbusinessdetails']['shop_name'] }}</a></div>
                         @endif
+                    @endif
+
 
                     <form action="{{ url('cart/add') }}" class="post-form" method="Post">@csrf
                         <input type="hidden" name="product_id" value="{{ $productDetails['id'] }}">

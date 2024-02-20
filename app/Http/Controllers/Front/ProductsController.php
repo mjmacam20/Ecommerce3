@@ -112,12 +112,12 @@ class ProductsController extends Controller
             if($getProductStock<$data['quantity']){
                 return redirect()->back()->with('error_message','Required Quantity is not available!');
             }
-            // Generate Session Id if not exists
-            $session_id = Session::get('session_id');
-            if(empty($session_id)){
-                $session_id = Session::getId();
-                Session::put('session_id',$session_id);
-            }
+                // Generate Session Id if not exists
+                $session_id = Session::get('session_id');
+                if(empty($session_id)){
+                    $session_id = Session::getId();
+                    Session::put('session_id',$session_id);
+                }
 
             //Check products if already exists in the user cart
             if(Auth::check()){
@@ -129,6 +129,19 @@ class ProductsController extends Controller
                 // User is not logged in
                 $countProducts = Cart::where(['product_id'=>$data['product_id'],'size'=>$data['size'],'session_id'=>$session_id])->count();
             }
+
+            if($countProducts>0){
+                return redirect()->back()->with('error_message','Product already exists in Cart!');
+                
+            }
+
+                // Generate Session id if not exists
+                $session_id = Session::get('session_id');
+                if(empty($session_id)){
+                    $session_id = Session::getId();
+                    Session::put('session_id',$session_id);
+                }
+
 
             // Save Product in carts table
             $item = new Cart;

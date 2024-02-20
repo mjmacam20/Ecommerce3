@@ -166,6 +166,56 @@ $(document).ready(function(){
 		})
 	});	
 
+	// Password Form Validation
+	$("#passwordForm").submit(function(){
+		$(".loader").show();
+		var formdata = $(this).serialize();
+		$.ajax({
+					
+			url:"/user/update-password",
+			type:"POST",
+			data:formdata,
+			success:function(resp){
+				if(resp.type=="error"){
+					$(".loader").hide();
+					$.each(resp.errors,function(i,error){
+						$("#password-"+i).attr('style','color:red');
+						$("#password-"+i).html(error);
+						
+					setTimeout(function(){
+						$("#password-"+i).css({
+							'display':'none'
+						});
+					},3000);
+				});	
+				}else if(resp.type=="incorrect"){
+					$(".loader").hide();
+						$("#password-error").attr('style','color:red');
+						$("#password-error").html(resp.message);
+						
+					setTimeout(function(){
+						$("#password-error").css({
+							'display':'none'
+						});
+					},3000);
+				}else if(resp.type=="success"){
+					/*alert(resp.message);*/
+					$(".loader").hide();
+					$("#password-success").attr('style','color:green');
+					$("#password-success").html(resp.message);				
+					setTimeout(function(){
+						$("#password-success").css({
+							'display':'none'
+						});
+					},4000);
+
+				}			
+			},error:function(){
+				alert("Error");
+			}
+		})
+	});	
+
 	// Login Form Validation
 	$("#loginForm").submit(function(){
 		$(".loader").show();
