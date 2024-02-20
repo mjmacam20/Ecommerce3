@@ -138,8 +138,7 @@
                     </li>
                 </ul>
             </div>
-            <p class="copyright-text">Copyright &copy; 2022
-                <a target="_blank" rel="nofollow" href="https://youtube.com/stackdevelopers">Stack Developers</a> | All Right Reserved</p>
+   
         </div>
     </div>
     <!-- Bottom-Footer /- -->
