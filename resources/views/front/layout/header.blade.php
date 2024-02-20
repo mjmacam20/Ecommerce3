@@ -101,8 +101,8 @@ $sections = Section::sections();
             <div class="row clearfix align-items-center">
                 <div class="col-lg-3 col-md-9 col-sm-6">
                     <div class="brand-logo text-lg-center">
-                        <a href="index.html">
-                            <img src="{{ asset('front/images/main-logo/wavepad.png') }}" alt="Stack Developers" class="app-brand-logo">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ asset('front/images/main-logo/wavepad.png') }}" alt="Wavepad" class="app-brand-logo">
                         </a>
                     </div>
                 </div>
@@ -277,6 +277,11 @@ $sections = Section::sections();
                 </div>
                 <div class="col-lg-9">
                     <ul class="bottom-nav g-nav u-d-none-lg">
+                        <li>
+                            <a href="{{ url('/') }}">Home
+                               
+                            </a>
+                        </li>
                         <li>
                             <a href="listing-without-filters.html">New Arrivals
                                 <span class="superscript-label-new">NEW</span>

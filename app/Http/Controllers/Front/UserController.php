@@ -70,48 +70,73 @@ class UserController extends Controller
         }
     }
 
-    public function forgotPassword(Request $request){
+    public function userAccount(Request $request){
         if($request->ajax()){
-            $data = $request->all();
+            $data = $request->all();    
             /*echo "<pre>"; print_r($data); die;*/
-
-            $validator = Validator::make($request->all(), [
-                'email' => 'required|email|max:150|exists:users',
-                
-            ],
-            [
-                'email.exists' => 'Email does not exists!'
-            ]
+                $validator = Validator::make($request->all(), [
+                    'name' => 'required|string|max:100',
+                    'mobile' => 'required|numeric|digits:11',
+                    'age'=>'required|min:2|max:100',
+                    'gender'=>'required'
+                    
+                ],
             );
-          
             if($validator->passes()){
-                // Generate New pass
-                $new_password = Str::random(16); 
-                // Update new password
-                User::where('email', $data['email'])->update(['password'=>bcrypt($new_password)]);
-                // Get User Details
-                $userDetails = User::where('email',$data['email'])->first()->toArray();
-                // Send Email to user
-                $email = $data['email'];
-                $messageData = ['name'=>$userDetails['name'],'email'=>$email, 'password'=>$new_password];
-                Mail::send('emails.user_forgot_password',$messageData,function($message)use($email){
-                    $message->to($email)->subject('New Password - Wavepad Managemnt');
-
-                });
-
-                //Show Success Message
-                return response()->json(['type'=>'success','message'=>'New Password sent to your registered email.']);
-
+                // Update User Details
+                User::where('id', Auth::user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile'],'age'=>$data['age'],'gender'=>$data['gender'] ]);
+                // Rediret back
+                //$redirectTo = url('/cart');
+                return response()->json(['type'=>'success','message'=>'Your contact details successfully updated!']);
             }else{
                 return response()->json(['type'=>'error','errors'=>$validator->messages()]);
             }
-
-       
         }else{
-            return view('front.users.forgot_password');
+            return view('front.users.user_account');
         }
     }
 
+    public function forgotPassword(Request $request){
+        if($request->ajax()){
+            $data = $request->all();
+    
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|email|max:150|exists:users',
+            ], [
+                'email.exists' => 'Email does not exist!'
+            ]);
+    
+            if($validator->passes()){
+                // Generate New pass
+                $new_password = rand(1000000, 9999999); // Generate a random 7-digit numeric password
+    
+                // Hash the new password
+                $hashed_password = bcrypt($new_password);
+    
+                // Update new hashed password
+                User::where('email', $data['email'])->update(['password' => $hashed_password]);
+    
+                // Get User Details
+                $userDetails = User::where('email', $data['email'])->first()->toArray();
+    
+                // Send Email to user
+                $email = $data['email'];
+                $messageData = ['name' => $userDetails['name'], 'email' => $email, 'password' => $new_password];
+                
+                Mail::send('emails.user_forgot_password', $messageData, function($message) use ($email){
+                    $message->to($email)->subject('New Password - Wavepad Management');
+                });
+    
+                // Show Success Message
+                return response()->json(['type' => 'success', 'message' => 'New Password sent to your registered email.']);
+            } else {
+                return response()->json(['type' => 'error', 'errors' => $validator->messages()]);
+            }
+        } else {
+            return view('front.users.forgot_password');
+        }
+    }
+    
     public function userLogin(Request $request){
         if($request->Ajax()){
             $data = $request->all();

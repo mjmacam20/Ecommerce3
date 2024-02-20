@@ -46,82 +46,89 @@
                     </div>
                 @endif
             <div class="row">
-                <!-- Login -->
+                <!-- account -->
                 <div class="col-lg-6">
-                    <div class="login-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Login</h2>
-                        <h6 class="account-h6 u-s-m-b-30">Welcome back! Sign in to your account.</h6>
-                        <form action="{{ url('admin/login') }}" method="post">@csrf
+                    <div class="account-wrapper">
+                        <h2 class="account-h2 u-s-m-b-20" style="font-size: 18px;">Update Contact Details</h2>
+                        <p id="account-error"></p>
+                        <p id="account-success"></p>
+                        <form id="accountForm" action="javascript:;" method="post">@csrf
                             <div class="u-s-m-b-30">
-                                <label for="vendor-email">Email
+                                <label for="user-email">Email
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="email" name="email" id="vendor-email" class="text-field" placeholder="Enter your Email">
+                                <input class="text-field" value="{{ Auth::user()->email }}" readonly="" disabled="" style="background-color: #f9f9f9;">
+                                <p id="account-email"></p>
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="vendor-password">Password
+                                <label for="user-name">Name
                                     <span class="astk">*</span>
                                 </label>
-                                <input  type="password" name="password" id="vendor-password" class="text-field" placeholder="Password">
+                                <input class="text-field" type="text" id="user-name" name="name" value="{{ Auth::user()->name }}">
+                                <p id="account-name"></p>
                             </div>
-                            <div class="group-inline u-s-m-b-30">
-                                <!--<div class="group-1">
-                                    <input type="checkbox" class="check-box" id="remember-me-token">
-                                    <label class="label-text" for="remember-me-token">Remember me</label>
-                                </div>-->
-                                <div class="group-2 text-right">
-                                    <div class="page-anchor">
-                                        <a href="lost-password.html">
-                                            <i class="fas fa-circle-o-notch u-s-m-r-9"></i>Lost your password?</a>
-                                    </div>
-                                </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-mobile">Mobile
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-mobile" name="mobile" value="{{ Auth::user()->mobile }}" minlength="11" maxlength="11">
+                                <p id="account-mobile"></p>
                             </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-name">Age
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-age" name="age" value="{{ Auth::user()->age }}">
+                                <p id="account-age"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-name">Gender
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-gender" name="gender" value="{{ Auth::user()->gender }}">
+                                <p id="account-gender"></p>
+                            </div>
+                                                  
                             <div class="m-b-45">
-                                <button class="button button-outline-secondary w-100">Login</button>
+                                <button class="button button-outline-secondary w-100">Update</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <!-- Login /- -->
+                <!-- account /- -->
                 <!-- Register -->
                 <div class="col-lg-6">
                     <div class="reg-wrapper">
-                        <h2 class="account-h2 u-s-m-b-20">Vendor Register</h2>
-                        <p id="login-error"></p>
-                        <h6 class="account-h6 u-s-m-b-30">Registering for this site allows you to access your order status and history.</h6>
-                        <form id="vendorForm" action="{{ url('/vendor/register') }}" method="post">@csrf
+                        <h2 class="account-h2 u-s-m-b-20" style="font-size: 18px;" >Update Password</h2>
+                        <p id="register-success"></p>
+                        <form id="registerForm" action="javascript:;" method="post">@csrf
                             <div class="u-s-m-b-30">
-                                <label for="vendorname">Name
+                                <label for="username">Current Password
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="vendorname" name="name" class="text-field" placeholder="Vendor Name">
+                                <input type="text" id="user-name" name="name" class="text-field" placeholder="Name">
+                                <p id="register-name"></p>
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="vendormobile">Mobile
+                                <label for="usermobile">New Password
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="text" id="vendormobile" name="mobile" class="text-field" placeholder="Vendor Mobile"  minlength="11" maxlength="11">
+                                <input type="text" id="user-mobile" name="mobile" class="text-field" placeholder="Mobile"  minlength="11" maxlength="11">
+                                <p id="register-mobile"></p>
                             </div>
                             <div class="u-s-m-b-30">
-                                <label for="vendoremail">Email
+                                <label for="useremail">Confirm Password
                                     <span class="astk">*</span>
                                 </label>
-                                <input type="email" id="vendoremail" name="email" class="text-field" placeholder="Vendor Email">
+                                <input type="email" id="user-email" name="email" class="text-field" placeholder="Email">
+                                <p id="register-email"></p>
                             </div>
-                            <div class="u-s-m-b-30">
-                                <label for="vendorpassword">Password
-                                    <span class="astk">*</span>
-                                </label>
-                                <input type="password" id="vendorpassword" name="password" class="text-field" placeholder="Vendor Password">
-                            </div>
-                            <div class="u-s-m-b-30">
-                                <input type="checkbox" class="check-box" id="accept" name="accept">
-                                <label class="label-text no-color" for="accept">I’ve read and accept the
-                                    <a href="terms-and-conditions.html" class="u-c-brand">Terms & Conditions</a>
-                                </label>
-                            </div>
+                            
                             <div class="u-s-m-b-45">
-                                <button class="button button-primary w-100">Register</button>
+                                <button class="button button-primary w-100">Update</button>
                             </div>
                         </form>
                     </div>
