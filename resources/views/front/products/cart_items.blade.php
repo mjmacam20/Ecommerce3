@@ -49,7 +49,7 @@
                         <td>
                             <div class="cart-quantity">
                                 <div class="quantity">
-                                    <input type="text" class="quantity-text-field" value="{{ $item['quantity'] }}">
+                                    <input type="text" class="quantity-text-field" value="{{ $item['quantity'] }}" readonly="">
                                     <a class="plus-a updateCartItem" data-cartid="{{ $item['id'] }}" data-qty="{{ $item['quantity'] }}" data-max="1000">&#43;</a>
                                     <a class="minus-a updateCartItem" data-cartid="{{ $item['id'] }}" data-qty="{{ $item['quantity'] }}" data-min="1">&#45;</a>
                                 </div>
