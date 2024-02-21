@@ -34,25 +34,25 @@
                     <div class="col-lg-6 col-md-6 col-sm-12">
                         <!-- Product-zoom-area -->
                         <div class="zoom-area">
-                            <img id="zoom-pro-quick-view" class="img-fluid" src="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}" alt="Zoom Image">
+                            <img id="zoom-pro-quick-view" class="img-fluid" src="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg" alt="Zoom Image">
                             <div id="gallery-quick-view" class="u-s-m-t-10">
-                                <a class="active" data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a class="active" data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
-                                <a data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
-                                <a data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
-                                <a data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
-                                <a data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
-                                <a data-image="{{ asset('front/images/product/product@4x.jpg') }}" data-zoom-image="{{ asset('front/images/product/product@4x.jpg') }}">
-                                    <img src="{{ asset('front/images/product/product@2x.jpg') }}" alt="Product">
+                                <a data-image="/front/images/product/product@4x.jpg" data-zoom-image="/front/images/product/product@4x.jpg">
+                                    <img src="/front/images/product/product@2x.jpg" alt="Product">
                                 </a>
                             </div>
                         </div>

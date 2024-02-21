@@ -103,7 +103,7 @@ $totalCartItems = totalCartItems();
                 <div class="col-lg-3 col-md-9 col-sm-6">
                     <div class="brand-logo text-lg-center">
                         <a href="index.html">
-                            <img src="{{ asset('front/images/main-logo/wavepad.png') }}" alt="wavepad" class="app-brand-logo">
+                            <img src="/front/images/main-logo/wavepad.png" alt="wavepad" class="app-brand-logo">
                         </a>
                     </div>
                 </div>
@@ -177,7 +177,7 @@ $totalCartItems = totalCartItems();
             <ul class="mini-cart-list">
                 <li class="clearfix">
                     <a href="single-product.html">
-                        <img src="{{ asset('front/images/product/product@1x.jpg') }}" alt="Product">
+                        <img src="/front/images/product/product@1x.jpg" alt="Product">
                         <span class="mini-item-name">Product name</span>
                         <span class="mini-item-price">$100.00</span>
                         <span class="mini-item-quantity"> x 1 </span>
@@ -185,7 +185,7 @@ $totalCartItems = totalCartItems();
                 </li>
                 <li class="clearfix">
                     <a href="single-product.html">
-                        <img src="{{ asset('front/images/product/product@1x.jpg')}}" alt="Product">
+                        <img src="/front/images/product/product@1x.jpg" alt="Product">
                         <span class="mini-item-name">Product name</span>
                         <span class="mini-item-price">$100.00</span>
                         <span class="mini-item-quantity"> x 1 </span>
@@ -193,7 +193,7 @@ $totalCartItems = totalCartItems();
                 </li>
                 <li class="clearfix">
                     <a href="single-product.html">
-                        <img src="{{ asset('front/images/product/product@1x.jpg')}}" alt="Product">
+                        <img src="/front/images/product/product@1x.jpg" alt="Product">
                         <span class="mini-item-name">Product name</span>
                         <span class="mini-item-price">$100.00</span>
                         <span class="mini-item-quantity"> x 1 </span>
@@ -201,7 +201,7 @@ $totalCartItems = totalCartItems();
                 </li>
                 <li class="clearfix">
                     <a href="single-product.html">
-                        <img src="{{ asset('front/images/product/product@1x.jpg')}}" alt="Product">
+                        <img src="/front/images/product/product@1x.jpg" alt="Product">
                         <span class="mini-item-name">Product name</span>
                         <span class="mini-item-price">$100.00</span>
                         <span class="mini-item-quantity"> x 1 </span>

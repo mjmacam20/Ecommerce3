@@ -270,7 +270,7 @@
                                                 @if(!empty($product['product_image']) && file_exists( $product_image_path))
                                                 <img class="img-fluid" src="{{ asset($product_image_path) }}" alt="Product">
                                                 @else
-                                                <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
+                                                <img class="img-fluid" src="/front/images/product_images/small/no-image.png" alt="Product">
                                                 @endif
                                             </a>
                                             <div class="item-action-behaviors">
