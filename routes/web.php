@@ -170,6 +170,9 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
         //check out
         Route::match(['get','post'],'/checkout','ProductsController@checkout');
 
+        // Get Delivery
+        Route::post('get-delivery-address','AddressController@getDeliveryAddress');
+
     });
    
 

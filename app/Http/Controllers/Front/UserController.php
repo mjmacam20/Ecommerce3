@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Country;
 use Validator;
 use Hash;
 use Session;
@@ -85,7 +86,7 @@ class UserController extends Controller
             );
             if($validator->passes()){
                 // Update User Details
-                User::where('id', Auth::user()->id)->update(['name'=>$data['name'],'mobile'=>$data['mobile'],'age'=>$data['age'],'gender'=>$data['gender'] ]);
+                User::where('id', Auth::user()->id)->update(['name'=>$data['name'],'address'=>$data['address'],'city'=>$data['city'],'state'=>$data['state'],'country'=>$data['country'],'zipcode'=>$data['zipcode'],'mobile'=>$data['mobile'],'age'=>$data['age'],'gender'=>$data['gender'] ]);
                 // Rediret back
                 //$redirectTo = url('/cart');
                 return response()->json(['type'=>'success','message'=>'Your contact details successfully updated!']);
@@ -93,8 +94,10 @@ class UserController extends Controller
                 return response()->json(['type'=>'error','errors'=>$validator->messages()]);
             }
         }else{
-            return view('front.users.user_account');
+            $countries = Country::where('status',1)->get()->toArray();
+            return view('front.users.user_account')->with(compact('countries'));
         }
+        
     }
 
     public function userUpdatePassword(Request $request){

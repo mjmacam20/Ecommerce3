@@ -69,6 +69,53 @@
                             </div>
 
                             <div class="u-s-m-b-30">
+                                <label for="user-address">Address
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-address" name="address" value="{{ Auth::user()->address }}" required="">
+                                <p id="account-address"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-city">City
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-city" name="city" value="{{ Auth::user()->city }}" required="">
+                                <p id="account-city"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-state">State
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-state" name="state" value="{{ Auth::user()->state }}" required="">
+                                <p id="account-state"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-country">Country
+                                    <span class="astk">*</span>
+                                </label>
+                                    <select class="text-field" id="user-country" name="country" style="color: #495057">
+                                    <option value="">Select Country</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{ $country['country_name'] }}" @if($country['country_name']==Auth::user()->country) selected @endif>
+                                            {{ $country['country_name'] }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <p id="account-country"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
+                                <label for="user-zipcode">Zipcode
+                                    <span class="astk">*</span>
+                                </label>
+                                <input class="text-field" type="text" id="user-zipcode" name="zipcode" value="{{ Auth::user()->zipcode }}" required="">
+                                <p id="account-zipcode"></p>
+                            </div>
+
+                            <div class="u-s-m-b-30">
                                 <label for="user-mobile">Mobile
                                     <span class="astk">*</span>
                                 </label>
