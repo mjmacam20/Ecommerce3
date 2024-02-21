@@ -110,6 +110,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::post('update-banner-status','BannersController@updateBannerStatus');
     Route::get('delete-banner/{id}','BannersController@deleteBanner');   
     Route::match(['get','post'],'add-edit-banner/{id?}','BannersController@addEditBanner');
+
+    //Users
+    Route::get('users','UserController@users');
+    Route::post('update-user-status','UserController@updateUserStatus');
     });
 });
 Route::namespace('App\Http\Controllers\Front')->group(function(){
@@ -151,16 +155,23 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
     Route::post('cart/delete','ProductsController@cartDelete');
 
     // User Login/Register
-    Route::get('/user/login-register','UserController@loginRegister');
+    Route::get('/user/login-register',['as'=>'login','uses'=>'UserController@loginRegister']);
 
     // User Register
     Route::post('user/register','UserController@userRegister');
 
-    // User Account
-    Route::match(['get','post'],'user/account','UserController@userAccount');
+    Route::group(['middleware'=>['auth']],function(){
+        // User Account
+        Route::match(['get','post'],'user/account','UserController@userAccount');
 
-    // User Update Password
-    Route::post('user/update-password','UserController@userUpdatePassword');
+        // User Update Password
+        Route::post('user/update-password','UserController@userUpdatePassword');
+        
+        //check out
+        Route::match(['get','post'],'/checkout','ProductsController@checkout');
+
+    });
+   
 
     // User Login
     Route::post('user/login','UserController@userLogin');

@@ -31,5 +31,9 @@
             </div>
         </div>
     </div>
+        <div class="button-area">
+            <a href="{{ url('/') }}" class="continue">Continue Shopping</a>
+            <a href="{{ url('/checkout') }}" class="checkout">Proceed to Checkout</a>
+        </div>
 <!-- Cart-Page /- -->
 @endsection
