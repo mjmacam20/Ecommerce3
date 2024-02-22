@@ -48,4 +48,34 @@ class AddressController extends Controller
             ]);
         };
     }
+
+    public function removeDeliveryAddress(Request $request){
+        //if($request->ajax()){
+        //    $data = $request->all();
+        //   
+        //    DeliveryAddress::where('id',$data['addressid'])->delete();
+        //    $deliveryAddresses = DeliveryAddress::deliveryAddresses();
+        //    $countries = Country::where('status',1)->get()->toArray();
+        //    return response()->json([
+        //        'view'=>(String)View::make('front.products.delivery_addresses')->with(compact('deliveryAddresses',// 'countries')) 
+        //    ]);
+        //}
+        if ($request->ajax()) {
+            $data = $request->all();
+    
+            // Ensure that the "addressid" key exists before using it
+            if (isset($data['addressid'])) {
+                DeliveryAddress::where('id', $data['addressid'])->delete();
+                $deliveryAddresses = DeliveryAddress::deliveryAddresses();
+                $countries = Country::where('status', 1)->get()->toArray();
+    
+                return response()->json([
+                    'view' => (string)View::make('front.products.delivery_addresses')->with(compact('deliveryAddresses', 'countries'))
+                ]);
+            } else {
+                // Handle the case when "addressid" is not set
+                return response()->json(['error' => 'Invalid request.']);
+            }
+        }
+    }
 }

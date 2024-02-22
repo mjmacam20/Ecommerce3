@@ -176,6 +176,9 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
          // Save Delivery
          Route::post('save-delivery-address','AddressController@saveDeliveryAddress');
 
+         // Remove Delivery Address
+         Route::post('remove-delivery-address','AddressController@removeDeliveryAddress');
+
     });
    
 
