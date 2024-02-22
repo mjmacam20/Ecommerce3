@@ -173,6 +173,9 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
         // Get Delivery
         Route::post('get-delivery-address','AddressController@getDeliveryAddress');
 
+         // Save Delivery
+         Route::post('save-delivery-address','AddressController@saveDeliveryAddress');
+
     });
    
 

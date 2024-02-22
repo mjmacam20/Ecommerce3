@@ -26,6 +26,21 @@
                                             Name
                                         </th>
                                         <th>
+                                            Address
+                                        </th>
+                                        <th>
+                                            City
+                                        </th>
+                                        <th>
+                                            State
+                                        </th>
+                                        <th>
+                                            Country
+                                        </th>
+                                        <th>
+                                            Zipcode
+                                        </th>
+                                        <th>
                                             Email
                                         </th>
                                         <th>
@@ -50,6 +65,21 @@
                                         </td>
                                         <td>
                                             {{ $user['name'] }}
+                                        </td>
+                                        <td>
+                                            {{ $user['address'] }}
+                                        </td>
+                                        <td>
+                                            {{ $user['city'] }}
+                                        </td>
+                                        <td>
+                                            {{ $user['state'] }}
+                                        </td>
+                                        <td>
+                                            {{ $user['country'] }}
+                                        </td>
+                                        <td>
+                                            {{ $user['zipcode'] }}
                                         </td>
                                         <td>
                                             {{ $user['email'] }}

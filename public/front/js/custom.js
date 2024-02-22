@@ -323,6 +323,25 @@ $(document).ready(function(){
 		});
 	});
 
+	// Save Delivery Address
+	$(document).on('submit',"#addressAddEditForm", function(){
+		$(".loader").show();
+		var formdata = $('#addressAddEditForm').serialize();
+		$.ajax({
+			url: '/save-delivery-address',
+			type:'post',
+			data:formdata,
+			success:function(data){
+				$(".loader").hide();
+				$("#deliveryAddreses").html(data.view);	
+
+			},error:function(){
+				$(".loader").hide();
+				alert("Error")
+			}
+		});
+	});
+
 
 });
 
