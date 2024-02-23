@@ -26,14 +26,16 @@
                     <label for="first-name-extra">Name
                         <span class="astk">*</span>
                     </label>
-                    <input type="text" name="delivery_name" id="delivery_name" class="text-field" required="">
+                    <input type="text" name="delivery_name" id="delivery_name" class="text-field">
+                    <p id="delivery-delivery_name"></p>
                 </div>
 
                 <div class="group-2">
                     <label for="last-name-extra">Address
                         <span class="astk">*</span>
                     </label>
-                    <input type="text" name="delivery_address" id="delivery_address" class="text-field" required="">
+                    <input type="text" name="delivery_address" id="delivery_address" class="text-field >
+                    <p id="delivery-delivery_address"></p>
                 </div>
             </div>
 
@@ -42,14 +44,16 @@
                     <label for="first-name-extra">City
                         <span class="astk">*</span>
                     </label>
-                    <input type="text" name="delivery_city" id="delivery_city" class="text-field" required=""s>
+                    <input type="text" name="delivery_city" id="delivery_city" class="text-field">
+                    <p id="delivery-delivery_city"></p>
                 </div>
 
                 <div class="group-2">
                     <label for="last-name-extra">State
                         <span class="astk">*</span>
                     </label>
-                    <input type="text" name="delivery_state" id="delivery_state" class="text-field" required="">
+                    <input type="text" name="delivery_state" id="delivery_state" class="text-field" >
+                    <p id="delivery-delivery_state"></p>
                 </div>
             </div>
 
@@ -66,6 +70,7 @@
                             </option>
                         @endforeach
                     </select>
+                    <p id="delivery-delivery_country"></p>
                 </div>
             </div>
         
@@ -73,21 +78,23 @@
                 <label for="postcode-extra">Zipcode
                     <span class="astk">*</span>
                 </label>
-                <input type="text" id="delivery_zipcode" name="delivery_zipcode" class="text-field" required="">
+                <input type="text" id="delivery_zipcode" name="delivery_zipcode" class="text-field" >
+                <p id="delivery-delivery_zipcode"></p>
             </div>
         
             <div class="u-s-m-b-13">
                 <label for="postcode-extra">Mobile
                     <span class="astk">*</span>
                 </label>
-                <input type="text" id="delivery_mobile" name="delivery_mobile" class="text-field" minlength=11 maxlength=11 required="">
+                <input type="text" id="delivery_mobile" name="delivery_mobile" class="text-field" minlength=11 maxlength=11>
+                <p id="delivery-delivery_mobile"></p>
             </div>
 
             <div class="u-s-m-b-13">
                 <button style="width: 100%;"type="submit" class="button button-outline-secondary" >Save</button>
             </div>
   
-        </form>
+    </form>
     <!-- Form-Fields /- -->
     </div>
     <div>

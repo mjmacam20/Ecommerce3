@@ -333,8 +333,20 @@ $(document).ready(function(){
 			data:formdata,
 			success:function(resp){
 				$(".loader").hide();
-				$("#deliveryAddreses").html(resp.view);	
-
+				if(resp.type=="error"){
+					$.each(resp.errors,function(i,error){
+						$("#delivery-"+i).attr('style','color:red');
+						$("#delivery-"+i).html(error);
+			
+					setTimeout(function(){
+						$("#delivery-"+i).css({
+							'display':'none'
+						});
+					},3000);
+				});	
+				}else{
+					$("#deliveryAddreses").html(resp.view);	
+				}
 			},error:function(){
 				$(".loader").hide();
 				alert("Error")

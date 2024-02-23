@@ -10,6 +10,21 @@ class Admin extends Authenticatable
 {
     use HasFactory;
     protected $guard = 'admin';
+    protected $fillable = [
+        'name',
+        'type',
+        'mobile',
+        'email',
+        'password',
+        'confirm',
+        'status',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
 
     public function vendorPersonal(){
         return $this->belongsTo('App\Models\Vendor','vendor_id');
