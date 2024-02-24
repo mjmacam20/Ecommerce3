@@ -32,19 +32,19 @@
 <section class="section-maker">
     <div class="container">
         <div class="sec-maker-header text-center">
-            <h3 class="sec-maker-h3">TOP COLLECTION</h3>
+            <h3 class="sec-maker-h3">TOP PRODUCTS</h3>
             <ul class="nav tab-nav-style-1-a justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#men-latest-products">New Arrivals</a>
+                    <a class="nav-link active" data-toggle="tab" href="#men-latest-products" id="newArrivalsSection" >New Arrivals</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#men-best-selling-products">Best Sellers</a>
+                    <a class="nav-link" data-toggle="tab" href="#men-best-selling-products" id="bestSellersSection">Best Sellers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#discounted-products">Discounted Products</a>
+                    <a class="nav-link" data-toggle="tab" href="#discounted-products" id="discountedSection">Discounted Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#men-featured-products">Featured Products</a>
+                    <a class="nav-link" data-toggle="tab" href="#men-featured-products" id="featuredSection">Featured Products</a>
                 </li>
             </ul>
         </div>
@@ -68,13 +68,13 @@
                                                 <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                 @endif
                                             </a>
-                                            <div class="item-action-behaviors">
+                                             <!--<div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -120,6 +120,7 @@
 
                         </div>
                     </div>
+                    
                     <div class="tab-pane show fade" id="men-best-selling-products">
                         <div class="slider-fouc">
                             <div class="products-slider owl-carousel" data-item="4">
@@ -136,13 +137,13 @@
                                                 <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                 @endif
                                             </a>
-                                            <div class="item-action-behaviors">
+                                             <!--<div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -205,13 +206,13 @@
                                                 <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                                 @endif
                                             </a>
-                                            <div class="item-action-behaviors">
+                                             <!--<div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -273,13 +274,13 @@
                                                 <img class="img-fluid" src="/front/images/product_images/small/no-image.png" alt="Product">
                                                 @endif
                                             </a>
-                                            <div class="item-action-behaviors">
+                                            <!--<div class="item-action-behaviors">
                                                 <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look
                                                 </a>
                                                 <a class="item-mail" href="javascript:void(0)">Mail</a>
                                                 <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
                                                 <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                            </div>
+                                            </div>-->
                                         </div>
                                         <div class="item-content">
                                             <div class="what-product-is">
@@ -344,60 +345,8 @@
         </div>
     </div>
 </div>
-<!-- Banner-Layer /- -->
+
 @endif
-<!-- Site-Priorities -->
-<section class="app-priority">
-    <div class="container">
-        <div class="priority-wrapper u-s-p-b-80">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="single-item-wrapper">
-                        <div class="single-item-icon">
-                            <i class="ion ion-md-star"></i>
-                        </div>
-                        <h2>
-                            Great Value
-                        </h2>
-                        <p>We offer competitive prices on our 100 million plus product range</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="single-item-wrapper">
-                        <div class="single-item-icon">
-                            <i class="ion ion-md-cash"></i>
-                        </div>
-                        <h2>
-                            Shop with Confidence
-                        </h2>
-                        <p>Our Protection covers your purchase from click to delivery</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="single-item-wrapper">
-                        <div class="single-item-icon">
-                            <i class="ion ion-ios-card"></i>
-                        </div>
-                        <h2>
-                            Safe Payment
-                        </h2>
-                        <p>Pay with the world’s most popular and secure payment methods</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="single-item-wrapper">
-                        <div class="single-item-icon">
-                            <i class="ion ion-md-contacts"></i>
-                        </div>
-                        <h2>
-                            24/7 Help Center
-                        </h2>
-                        <p>Round-the-clock assistance for a smooth shopping experience</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Site-Priorities /- -->
+
+
 @endsection

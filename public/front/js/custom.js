@@ -380,6 +380,24 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function () {
+    // Handle click event on "New Arrivals" link
+    $("#newArrivalsLink").on("click", function (e) {
+        e.preventDefault();
+
+        // Get the target section
+        var targetSection = $("#newArrivalsSection");
+
+        // Move the content to the target section
+        targetSection.append($("men-latest-products"));
+
+        // Scroll to the target section
+        $("html, body").animate({
+            scrollTop: targetSection.offset().top
+        }, 1000);
+    });
+});
+
 function get_filter(class_name){
     var filter = [];
     $('.'+class_name+':checked').each(function(){

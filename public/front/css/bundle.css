@@ -1968,7 +1968,7 @@ body {
   background-color: #ffffff; }
 
 .bottom-nav {
-  padding: 0 30px; }
+  padding: 0 10px; }
   .bottom-nav > li > a {
     padding: 15px 0;
     font-size: 14px;
@@ -2089,7 +2089,7 @@ body {
     width: 100%;
     height: 23px;
     margin-bottom: 14px;
-    background: url(../images/payment/pay-3.png) center center no-repeat; }
+    background: url() center center no-repeat; }
 
 .social-media-wrapper {
   margin-bottom: 6px; }
