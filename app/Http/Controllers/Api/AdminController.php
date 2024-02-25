@@ -16,6 +16,7 @@ class AdminController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:100',
             'type' => 'required',
+            'vendor_id' => 'required|in:0,1',
             'mobile' => 'required|numeric|digits:11',
             'email' => 'required', 
             'password' => 'required|min:8|max:100',
@@ -41,6 +42,7 @@ class AdminController extends Controller
         $admin = Admin::create([
             'name' => $request->name,
             'type' => $request->type, 
+            'vendor_id' => $request->vendor_id,
             'mobile' => $request->mobile,
             'email' => $request->email,
             'password' => Hash::make($request->password),
