@@ -156,6 +156,11 @@ $totalCartItems = totalCartItems();
                                     </li>
                                 @if(Auth::check())
                                     <li>
+                                        <a href="{{ url('user/orders') }}">
+                                            <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
+                                            My Orders</a>
+                                    </li>
+                                    <li>
                                         <a href="{{ url('user/account') }}">
                                             <i class="fas fa-sign-in-alt u-s-m-r-9"></i>
                                             My Account</a>

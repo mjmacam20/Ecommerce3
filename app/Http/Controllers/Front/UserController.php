@@ -201,7 +201,8 @@ class UserController extends Controller
                             Cart::where('session_id',$session_id)->update(['user_id'=>$user_id]);
                         }
 
-                    $redirectTo = url('cart');
+                    /*$redirectTo = url('cart');*/
+                    $redirectTo = url('/');
                     return response()->json(['type'=>'success','url'=>$redirectTo]);
                 }else{
                     return response()->json(['type'=>'incorrect','message'=>'Incorrect Email or Password!']);

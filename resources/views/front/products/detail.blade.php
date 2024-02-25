@@ -205,8 +205,7 @@
                             </div>
                             <div>
                                 <button class="button button-outline-secondary" type="submit">Add to cart</button>
-                                <button class="button button-outline-secondary far fa-heart u-s-m-l-6"></button>
-                                <button class="button button-outline-secondary far fa-envelope u-s-m-l-6"></button>
+                                
                             </div>               
                       </div>
                     </form>
@@ -575,12 +574,7 @@
                                             <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                             @endif
                                     </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
+                                 
                                 </div>
                                 <div class="item-content">
                                     <div class="what-product-is">
@@ -653,12 +647,7 @@
                                             <img class="img-fluid" src="{{ asset('front/images/product_images/small/no-image.png') }}" alt="Product">
                                             @endif
                                     </a>
-                                    <div class="item-action-behaviors">
-                                        <a class="item-quick-look" data-toggle="modal" href="#quick-view">Quick Look</a>
-                                        <a class="item-mail" href="javascript:void(0)">Mail</a>
-                                        <a class="item-addwishlist" href="javascript:void(0)">Add to Wishlist</a>
-                                        <a class="item-addCart" href="javascript:void(0)">Add to Cart</a>
-                                    </div>
+                            
                                 </div>
                                 <div class="item-content">
                                     <div class="what-product-is">

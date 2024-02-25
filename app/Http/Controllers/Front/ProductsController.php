@@ -325,9 +325,13 @@ class ProductsController extends Controller
                    $cartItem->product_qty = $item['quantity'];
                    $cartItem->save();
                 }
+                
+                //Insert Order Id in Session variable
+                Session::put('order_id',$order_id);
+
                 DB::commit();
 
-                echo "order successfully placed"; die;
+                return redirect('thanks');
  
         }
         
@@ -335,4 +339,14 @@ class ProductsController extends Controller
         return view('front.products.checkout')->with(compact('deliveryAddresses','countries','getCartItems'));
     }
     
+    public function thanks(){
+        if(Session::has('order_id')){
+            //Empty the cart
+            Cart::where('user_id',Auth::user()->id)->delete();
+            return view('front.products.thanks');
+        }else{
+            return redirect('cart');
+        }
+    
+    }
 }

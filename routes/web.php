@@ -173,12 +173,17 @@ Route::namespace('App\Http\Controllers\Front')->group(function(){
         // Get Delivery
         Route::post('get-delivery-address','AddressController@getDeliveryAddress');
 
-         // Save Delivery
-         Route::post('save-delivery-address','AddressController@saveDeliveryAddress');
+        // Save Delivery
+        Route::post('save-delivery-address','AddressController@saveDeliveryAddress');
 
-         // Remove Delivery Address
-         Route::post('remove-delivery-address','AddressController@removeDeliveryAddress');
+        // Remove Delivery Address
+        Route::post('remove-delivery-address','AddressController@removeDeliveryAddress');
 
+        // Thanks
+        Route::get('thanks','ProductsController@thanks');
+
+        // User Order
+        Route::get('user/orders/{id?}','OrderController@orders');
     });
    
 
