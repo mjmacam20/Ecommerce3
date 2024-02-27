@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\AdminController;
 //Route::post('/reset-password/{token}', [PasswordResetController::class, 'reset']);
 
 Route::middleware('api')->group(function () {
-    //admin
+    //Admin
     Route::post('/register-a', [AdminController::class, 'loginRegister']);
     Route::post('/login-a', [AdminController::class, 'loginAdmin']);
 }); 
