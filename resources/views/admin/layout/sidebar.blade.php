@@ -35,6 +35,20 @@
                 </ul>
             </div>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-orders" aria-expanded="false" aria-controls="ui-orders">
+            <i class="icon-layout menu-icon"></i>
+            <span class="menu-title">Orders Management</span>
+            <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-orders">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/orders') }}">Orders</a></li>
+                </ul>
+            </div>
+        </li>
+        
         @else
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-settings" aria-expanded="false" aria-controls="ui-settings">
@@ -77,6 +91,18 @@
                     <li class="nav-item"> <a class="nav-link" href="{{ url('admin/authors') }}">Authors</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ url('admin/products') }}">Products</a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{ url('admin/filters') }}">Filters</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-orders" aria-expanded="false" aria-controls="ui-orders">
+            <i class="icon-layout menu-icon"></i>
+            <span class="menu-title">Orders Management</span>
+            <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-orders">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="{{ url('admin/orders') }}">Orders</a></li>
                 </ul>
             </div>
         </li>

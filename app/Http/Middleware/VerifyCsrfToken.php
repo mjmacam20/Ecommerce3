@@ -79,6 +79,8 @@ class VerifyCsrfToken extends Middleware
 
         //Vendor
         "vendor/register",
-        "admin/update-vendor-details/{slug}"
+        "admin/update-vendor-details/{slug}",
+        "admin/view-vendor-details/{id}"
+        
     ];
 }

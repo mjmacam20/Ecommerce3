@@ -111,9 +111,12 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('delete-banner/{id}','BannersController@deleteBanner');   
     Route::match(['get','post'],'add-edit-banner/{id?}','BannersController@addEditBanner');
 
-    //Users
+    // Users
     Route::get('users','UserController@users');
     Route::post('update-user-status','UserController@updateUserStatus');
+
+    // Orders
+    Route::get('orders','OrderController@orders');
     });
 });
 Route::namespace('App\Http\Controllers\Front')->group(function(){
