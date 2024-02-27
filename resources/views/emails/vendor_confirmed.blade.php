@@ -18,9 +18,10 @@
     <tr><td>&nbsp;</td></tr>
     <tr><td>Email: {{ $email }}</td></tr>
     <tr><td>&nbsp;</td></tr>
-    <tr><td>Password: ***** (as chosen by you) </td></tr>
+    <tr><td>Password: ***** </td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr><td>Sincerly,</td></tr>
+    <tr><td>&nbsp;</td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr><td>Wavepad Management</td></tr>
 </body>
