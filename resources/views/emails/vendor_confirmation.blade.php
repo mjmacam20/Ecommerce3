@@ -10,7 +10,7 @@
     <tr><td>&nbsp;<br></td></tr>
     <tr><td>Please click on below link to confirm your Vendor Account :-</td></tr>
     <tr><td>&nbsp;</td></tr>
-    <tr><td><a href="{{ url('vendor/confirm/'.$code) }}">Confirm Account<?php/*{{ url('vendor/confirm/'.$code) }}*/?></a></td></tr>
+    <tr><td><a href="{{ url('vendor/confirm/'.$code) }}">Confirm Account</a></td></tr>
     <tr><td>&nbsp;<br></td></tr>
     <tr><td>Sincerly,</td></tr>
     <tr><td>&nbsp;</td></tr>
