@@ -92,8 +92,9 @@ class VendorController extends Controller
             
             DB::commit();
             //Redirect Back vendor with success message
+            $redirectTo = url('vendor/login-register');
             $message = "Thanks for Registering as Vendor. Please confirm your email to activate your account.";
-            return redirect()->back()->with('success_message',$message);
+            return redirect($redirectTo)->with('success_message', $message);
         }
     }
 

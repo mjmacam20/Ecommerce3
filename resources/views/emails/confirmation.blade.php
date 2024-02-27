@@ -15,6 +15,7 @@
         <tr><td>&nbsp;</td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td>Sincerly,</td></tr>
+        <tr><td>&nbsp;<br></td></tr>
         <tr><td>Wavepad Management</td></tr>
     </table>
     
