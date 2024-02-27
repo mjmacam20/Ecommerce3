@@ -71,6 +71,9 @@
                                             <td>
                                                 {{ $order['payment_method'] }}
                                             </td>
+                                            <td>
+                                                <a title="View Order Details" href="{{ url('admin/orders/'.$order['id']) }}"><i style='font-size: 22px;'class="mdi mdi-file-document"></i></a>
+                                            </td>
                                         </tr>
                                      @endif
                                     @endforeach
