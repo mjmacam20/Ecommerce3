@@ -1150,8 +1150,9 @@ body {
   position: relative;
   margin: 0 10px 30px;
   overflow: hidden;
-  border-radius: 20px; /* Add border-radius for nice cornering */
+  border-radius: 10px; /* Add border-radius for nice cornering */
   transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+  transform-style: preserve-3d;
 }
 
 .item:hover {
@@ -1159,8 +1160,10 @@ body {
 }
 
 .image-container {
-  position: relative; }
+  position: relative;
+ }
 
+ 
 .item-img-wrapper-link {
   display: block;
   position: relative; }
