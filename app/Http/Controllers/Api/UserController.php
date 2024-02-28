@@ -94,7 +94,7 @@ class UserController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
-            if ($user->status == 0) {
+            if ($user->status == 1) {
                 return response([
                     'message' => 'You account is not activated. Please confirm your account to activate',
                     'status' => 'inactive',
