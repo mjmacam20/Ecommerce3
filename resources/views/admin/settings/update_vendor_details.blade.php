@@ -216,14 +216,6 @@
                             <option value="National ID" @if(isset($vendorDetails['address_proof']) && $vendorDetails ['address_proof']=="National ID") selected @endif>National ID</option>
                         </select>
                     </div>
-                      <div class="form-group">
-                        <label for="address_proof_image">Address Proof Image</label>
-                        <input type="file" class="form-control" id="address_proof_image" name="address_proof_image">
-                        @if(!empty($vendorDetails['address_proof_image']))
-                            <a target="_blank" href="{{ url ('admin/images/proofs/'.$vendorDetails['address_proof_image']) }}">View Image</a>
-                            <input type="hidden" name="current_address_proof" value="{{ $vendorDetails['address_proof_image'] }}">
-                        @endif
-                      </div>
 
                       <div class="form-group">
                           <label for="address_proof_image">Address Proof Image</label>

@@ -77,6 +77,9 @@ class VerifyCsrfToken extends Middleware
         "admin/users",
         "admin/logout",
 
+        //Users
+        "user/login-register",
+
         //Vendor
         "vendor/register",
         "admin/update-vendor-details/{slug}",
