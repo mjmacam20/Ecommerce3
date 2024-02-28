@@ -106,7 +106,7 @@ class UserController extends Controller
                 'message' => 'Login Success',
                 'status' => 'success',
                 'token' => $token,
-                'user' => $user, // Include user details if needed
+                'user' => $user, 
             ], 200);
         }
 
