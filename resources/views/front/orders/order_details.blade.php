@@ -41,17 +41,17 @@
                         <th>Product Qty</th>
                     </tr>
                     @foreach($orderDetails['orders_products'] as $product)
-                    <tr>
-                        <td>
-                            @php $getProductImage = Product::getProductImage($product['product_id']) @endphp
-                            <a target="_blank" href="{{ url('product/'.$product['product_id']) }}"><img style="width:80px" src="{{ asset('front/images/product_images/small/'.$getProductImage) }}"></a>
-                        </td>
-                        <td>{{ $product['product_code'] }}</td>
-                        <td>{{ $product['product_name'] }}</td>
-                        <td>{{ $product['product_size'] }}</td>
-                        <td>{{ $product['product_color'] }}</td>
-                        <td>{{ $product['product_qty'] }}</td>
-                    </tr>
+                        <tr>
+                            <td>
+                                @php $getProductImage = Product::getProductImage($product['product_id']) @endphp
+                                <a target="_blank" href="{{ url('product/'.$product['product_id']) }}"><img style="width:80px" src="{{ asset('front/images/product_images/small/'.$getProductImage) }}"></a>
+                            </td>
+                            <th>{{ $product['product_code'] }}</th>
+                            <th>{{ $product['product_name'] }}</th>
+                            <th>{{ $product['product_size'] }}</th>
+                            <th>{{ $product['product_color'] }}</th>
+                            <th>{{ $product['product_qty'] }}</th>
+                        </tr>
                     @endforeach
             </table>
             <table class="table table-striped table-borderless">

@@ -317,7 +317,7 @@ class ProductsController extends Controller
                    $cartItem->vendor_id = $getProductDetails['vendor_id'];
                    $cartItem->product_id = $item['product_id'];
                    $cartItem->product_code = $getProductDetails['product_code'];
-                   $cartItem->product_name = $getProductDetails['admin_id'];
+                   $cartItem->product_name = $getProductDetails['product_name'];
                    $cartItem->product_color = $getProductDetails['product_color'];
                    $cartItem->product_size = $item['size'];
                    $getDiscountAttributePrice = Product::getDiscountAttributePrice($item['product_id'],$item['size']);
