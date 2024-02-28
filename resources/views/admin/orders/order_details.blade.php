@@ -208,7 +208,7 @@
                         <option value="{{ $status['name'] }}" @if(!empty($orderDetails['order_status']) && $orderDetails['order_status']==$status['name']) selected="" @endif>{{ $status['name'] }}</option>
                         @endforeach
                       </select>
-                      <button type="submit">Update</button>
+                      <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                   </div>
                 </div>
